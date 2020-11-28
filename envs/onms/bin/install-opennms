@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# Removes an existing OpenNMS install, builds a new one and installs it.
+
+if [[ -z "$OPENNMS_SETUP_DEFINED" ]]; then
+    ( >&2 echo -e "ERROR: setup.sh was not sourced" )
+    exit 1
+fi
+
+read -p "Are you sure? This will remove your existing install. (y/n): " -n 1 -r
+echo # new line
+
+if ! [[ $REPLY =~ ^[Yy]$ ]]; then
+    exit 0
+fi
+
+RELEASE=$(python -c "import xml.etree.ElementTree as ET; print(ET.parse(open('"$OPENNMS_SOURCE"' + \
+    '/pom.xml')).getroot().find('{http://maven.apache.org/POM/4.0.0}version').text)")
+
+if [[ -z "$RELEASE" ]]; then
+    ( >&2 echo -e "ERROR: Could not determine release" )
+    exit 1
+fi
+
+if [[ -x "$OPENNMS_HOME"/bin/opennms ]]; then
+    echo -e "Attempting to stop OpenNMS..."
+    nstop_cmd
+else
+    echo -e "No install found, nothing to stop"
+fi
+
+echo -e "***Removing old install...***"
+mkdir -p /tmp/target.backup.$$
+cp "$OPENNMS_SOURCE"/target/*.tar.gz /tmp/target.backup.$$
+sudo rm -rf "$OPENNMS_SOURCE"/target/*
+sudo rm -rf "$OPENNMS_SOURCE"/features/minion/container/karaf/target/*
+cp /tmp/target.backup.$$/*.tar.gz "$OPENNMS_SOURCE"/target/
+rm -rf /tmp/target.backup.$$
+
+read -p "Would you like to rebuild. (y/n): " -n 1 -r
+echo # new line
+
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo -e "***Building...***"
+    # Run in subshell since we are changing directories
+    ( cd "$OPENNMS_SOURCE" && clean_cmd && compile_cmd && assemble_cmd )
+fi
+
+if ! [[ -d "$OPENNMS_SOURCE"/target/opennms-"$RELEASE" ]]; then
+    mkdir "$OPENNMS_SOURCE"/target/opennms-"$RELEASE"
+fi
+
+echo -e "***Installing...***"
+
+if ! [[ -L "$OPENNMS_SOURCE"/target/opennms ]]; then
+    ln -s "$OPENNMS_SOURCE"/target/opennms-"$RELEASE" "$OPENNMS_HOME"
+fi
+
+tar zxvf "$OPENNMS_SOURCE"/target/opennms-"$RELEASE".tar.gz -C "$OPENNMS_HOME"
+# TODO: Copy overlay?

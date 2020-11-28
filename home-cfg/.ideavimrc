@@ -1,0 +1,17 @@
+source ~/.vimrc
+
+" Have to reset the leader character again for some reason even though it is in .vimrc
+let mapleader=","
+
+set idearefactormode=keep
+set ideajoin=true
+
+map <leader>jr <Action>(RenameElement)
+map <leader>jf <Action>(ReformatCode)
+map <leader>jp <Action>(OptimizeImports)
+map <leader>jg <Action>(GotoDeclaration)
+map <leader>ji <Action>(ImplementMethods)
+map <leader>jo <Action>(OverrideMethods)
+map <leader>jq <Action>(ShowIntentionActions)
+map <leader>js <Action>(FileStructurePopup)
+map <leader>jm <Action>(GotoImplementation)
