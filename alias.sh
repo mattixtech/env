@@ -1,4 +1,5 @@
 #@IgnoreInspection BashAddShebang
+
 # Convenient alias commands for interactive shells
 alias l="exa -lahr"
 alias mi="mvn clean install -DskipTests=true"

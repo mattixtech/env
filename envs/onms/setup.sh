@@ -1,10 +1,10 @@
 #@IgnoreInspection BashAddShebang
+
 export OPENNMS_SETUP_DEFINED="true"
 
 # ***CHANGEME*** ***CHANGEME***
-# These need to point to the correct directory on your system
 # The directory the opennms git repo exists in
-OPENNMS_DIR="/Users/opennms/shared/opennms"
+OPENNMS_DIR="~/shared/opennms"
 # ***CHANGEME*** ***CHANGEME***
 
 ONMS_BASE_DIR="$BASE_DIR/onms"

@@ -1,4 +1,5 @@
 #@IgnoreInspection BashAddShebang
+
 # Add the bin directory to the PATH
 PATH="${ONMS_BIN_DIR}:${PATH}"
 export PATH

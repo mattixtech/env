@@ -1,4 +1,5 @@
 #@IgnoreInspection BashAddShebang
+
 # Command shortcuts for noninteractive shells
 
 get_groovy()

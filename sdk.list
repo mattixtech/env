@@ -1,10 +1,12 @@
-kotlin
+gradle
 groovy
 groovy-serv
-java11
+java 11.0.9.j9-adpt
+java 8.0.275.j9-adpt
+kotlin
+kscript
+leiningen
 maven
-gradle
-visualvm
 micronaut
-clojure
-leinin
+springboot
+visualvm
