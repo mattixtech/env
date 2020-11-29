@@ -1,3 +1,3 @@
 #@IgnoreInspection BashAddShebang
 
-# Loop through all config and link to ~/
+# TODO: softlink all files in home-cfg to ~/

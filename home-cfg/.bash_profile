@@ -15,7 +15,6 @@ source ~/shared/env/setup.sh
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 source ~/.bashrc
-set -o vi
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
