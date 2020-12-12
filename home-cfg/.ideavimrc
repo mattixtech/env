@@ -1,10 +1,11 @@
 source ~/.vimrc
 
-" Have to reset the leader character again for some reason even though it is in .vimrc
 let mapleader=","
-
 set idearefactormode=keep
 set ideajoin=true
+
+" Emulated plugins
+set textobj-entire      " add text object for entire buffer
 
 map <leader>jr <Action>(RenameElement)
 map <leader>jf <Action>(ReformatCode)
@@ -15,3 +16,10 @@ map <leader>jo <Action>(OverrideMethods)
 map <leader>jq <Action>(ShowIntentionActions)
 map <leader>js <Action>(FileStructurePopup)
 map <leader>jm <Action>(GotoImplementation)
+map <leader>jv <Action>(SelectInProjectView)
+map <leader>ja <Action>(Annotate)
+map <leader>jh <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>je <Action>(GotoNextError)
+map <leader>jz <Action>(ToggleZenMode)
+map <leader>jZ <Action>(TogglePresentationMode)
+map <leader>jt <Action>(ActivateTerminalToolWindow)

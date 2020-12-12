@@ -2,20 +2,23 @@
 
 " Set up plugins via vim-plug
 call plug#begin('~/.vim/plugged')
-" Idea compatible
+" Ideavim compatible
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'tpope/vim-commentary'
+Plug 'tommcdo/vim-exchange'
+Plug 'vim-scripts/ReplaceWithRegister'
 
 " Other plugins
 Plug 'itchyny/lightline.vim'
-Plug 'tommcdo/vim-exchange'
-Plug 'tpope/vim-repeat'
-Plug 'michaeljsmith/vim-indent-object'
 call plug#end()
 
-let mapleader=","           " set the leader key to ,
+" Plugin settings
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" General settings
+let mapleader=","
 " set highlight to 500 ms
 let g:highlightedyank_highlight_duration = 500
 
