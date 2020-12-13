@@ -3,11 +3,13 @@ source ~/.vimrc
 let mapleader=","
 set idearefactormode=keep
 set ideajoin=true
+set ideamarks=false
 
 " Emulated plugins
 set textobj-entire
 set easymotion
 
+" Map IDE actions
 map <leader>jr <Action>(RenameElement)
 map <leader>jf <Action>(ReformatCode)
 map <leader>jp <Action>(OptimizeImports)

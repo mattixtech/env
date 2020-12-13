@@ -38,9 +38,13 @@ set lazyredraw              " redraw only when we need to.
 set showmatch               " highlight matching [{()}]
 set incsearch               " search as characters are entered
 set hlsearch                " highlight matches
+set ignorecase
+set smartcase               " disable case insensitive when searching in uppercase
+set scrolloff=3
 set ttimeoutlen=50
 set visualbell              " don't beep the bell
 set encoding=utf-8          " use utf-8 encoding
+set showcmd                 " show partial command in status bar
 set noshowmode
 set laststatus=2
 
@@ -50,11 +54,14 @@ endif
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
+
 " highlight last inserted text
 nnoremap gV `[v`]
+
 " Add newlines with enter
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
