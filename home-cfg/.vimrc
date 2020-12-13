@@ -9,6 +9,8 @@ Plug 'vim-scripts/argtextobj.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tommcdo/vim-exchange'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
 
 " Other plugins
 Plug 'itchyny/lightline.vim'

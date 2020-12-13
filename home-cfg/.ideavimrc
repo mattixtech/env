@@ -5,7 +5,8 @@ set idearefactormode=keep
 set ideajoin=true
 
 " Emulated plugins
-set textobj-entire      " add text object for entire buffer
+set textobj-entire
+set easymotion
 
 map <leader>jr <Action>(RenameElement)
 map <leader>jf <Action>(ReformatCode)
