@@ -29,3 +29,4 @@ map <leader>je <Action>(GotoNextError)
 map <leader>jz <Action>(ToggleZenMode)
 map <leader>jZ <Action>(TogglePresentationMode)
 map <leader>jt <Action>(ActivateTerminalToolWindow)
+map <leader>jc :tabonly<CR>
