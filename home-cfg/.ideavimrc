@@ -1,4 +1,6 @@
 source ~/.vimrc
+" For windows
+"source ~/Appdata/Local/nvim/init.vim
 
 let mapleader=","
 set idearefactormode=keep

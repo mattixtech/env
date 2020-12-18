@@ -2,6 +2,8 @@
 
 " Set up plugins via vim-plug
 call plug#begin('~/.vim/plugged')
+" For Windows
+"call plug#begin('~/AppData/Local/nvim/plugged')
 " Ideavim compatible
 Plug 'tpope/vim-surround'
 Plug 'machakann/vim-highlightedyank'
