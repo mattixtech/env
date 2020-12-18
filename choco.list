@@ -27,7 +27,6 @@ nodejs-lts
 openjdk
 python3
 ripgrep
-sd
 SQLite
 starship
 tldr
