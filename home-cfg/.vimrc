@@ -50,9 +50,10 @@ set showcmd                 " show partial command in status bar
 set noshowmode
 set laststatus=2
 
-if !has('gui_running')
+if !has("gui_running")
     set t_Co=256
 endif
+set guifont=fira_code:h22
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
@@ -67,3 +68,7 @@ nnoremap gV `[v`]
 " Add newlines with enter
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
+
+if has("win32")
+    set shell=powershell.exe
+endif
