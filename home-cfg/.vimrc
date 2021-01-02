@@ -1,4 +1,4 @@
-" VIM config for Vim 8.0+
+" Config for Neovim/Vim 8/Ideavim
 
 " Set up plugins via vim-plug
 call plug#begin('~/.vim/plugged')
@@ -35,14 +35,15 @@ set number                  " absolute line numbering on current line
 set tabstop=4               " number of visual spaces per TAB
 set softtabstop=4           " number of spaces in tab when editing
 set expandtab               " tabs are spaces
+set shiftwidth=4            " shifting is 4 spaces
 set wildmenu                " visual autocomplete for command menu
 set lazyredraw              " redraw only when we need to.
 set showmatch               " highlight matching [{()}]
 set incsearch               " search as characters are entered
 set hlsearch                " highlight matches
-set ignorecase
+set ignorecase              " ignore case when searching
 set smartcase               " disable case insensitive when searching in uppercase
-set scrolloff=3
+set scrolloff=2             " show two lines of extra scroll
 set ttimeoutlen=50
 set visualbell              " don't beep the bell
 set encoding=utf-8          " use utf-8 encoding
@@ -53,7 +54,10 @@ set laststatus=2
 if !has("gui_running")
     set t_Co=256
 endif
-set guifont=fira_code:h22
+if has("win32")
+    set shell=powershell.exe
+endif
+set guifont=Fira\ Code:h22
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
@@ -65,10 +69,6 @@ nnoremap k gk
 " highlight last inserted text
 nnoremap gV `[v`]
 
-" Add newlines with enter
+" Add newlines with enter and shift-enter
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
-
-if has("win32")
-    set shell=powershell.exe
-endif

@@ -9,7 +9,6 @@ set ideamarks=false
 
 " Emulated plugins
 set textobj-entire
-"set easymotion
 
 " KJump settings -- simplified vim-easymotion
 nmap <leader><leader>s :action KJumpAction<CR>
