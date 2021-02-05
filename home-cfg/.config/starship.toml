@@ -1,26 +1,27 @@
-# Don't print a new line at the start of the prompt
+
 add_newline = false
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$env_var\
+$custom\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$character """
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
-
-# Disable the AWS module.
-[aws]
-disabled = true
-
-[cmd_duration]
-disabled = true
-
-[username]
-show_always = true
+[character]
+success_symbol = '>>>'
+error_symbol = '>>>'
 
 [time]
-disabled = false
-
-[status]
 disabled = false
